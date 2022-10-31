@@ -40,7 +40,7 @@ export function Header({
                 <AppLogo forceConfigurableLogo />
               </a>
             </li>
-            {enableSpoke && (
+     {/*       {enableSpoke && (
               <li>
                 <a href="/spoke">
                   {isHmc ? <FormattedMessage id="header.spoke" defaultMessage="Spoke" /> : editorName}
@@ -68,20 +68,19 @@ export function Header({
                 </a>
               </li>
             )}
-            {showCloud && (
+            */}
               <li>
-                <a href="/cloud">
-                  <FormattedMessage id="header.cloud" defaultMessage="Hubs Cloud" />
+                <a href={"https://www.aumentur.app/en/app-for-smart-tourism-intelligent-destination/"}>
+                  <FormattedMessage id="header.cloud" defaultMessage="Our App" />
                 </a>
               </li>
-            )}
-            {isHmc && (
               <li>
-                <a href="/labs">
-                  <FormattedMessage id="header.labs" defaultMessage="Labs" />
+                <a href={"https://www.aumentur.app/en/news/"}>
+                  <FormattedMessage id="header.labs" defaultMessage="News" />
                 </a>
               </li>
-            )}
+
+            
             {isAdmin && (
               <li>
                 <a href="/admin" rel="noreferrer noopener">
@@ -95,6 +94,7 @@ export function Header({
             )}
           </ul>
         </nav>
+        {/*
         <div className={styles.signIn}>
           {isSignedIn ? (
             <div>
@@ -112,8 +112,9 @@ export function Header({
           ) : (
             <SignInButton />
           )}
-        </div>
+        </div>*/}
         {isHmc ? <SocialBar mobile /> : null}
+          
       </Container>
     </header>
   );

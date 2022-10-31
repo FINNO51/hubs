@@ -13,27 +13,24 @@ export function MobileNav({ isHmc, showDocsLink, docsUrl, showSourceLink, showCo
   const cloud = isHmc ? null : "cloud";
 
   return (
-    <>
+    <>{/*
       <div className={styles.navContainer}>
         <div className={styles.mobileNavWrapper}>
           <Hamburger onClick={toggleNav} />
           <header className={`${navOpen ? `is-active ${cloud}` : "hide"}`}>
             <nav role="navigation">
               <ul>
-                {isHmc && (
                   <li>
-                    <a href="/spoke">
-                      <FormattedMessage id="header.spoke" defaultMessage="Spoke" />
+                    <a href={"https://www.aumentur.app/en/app-for-smart-tourism-intelligent-destination/"}>
+                      <FormattedMessage id="header.spoke" defaultMessage="Our App" />
                     </a>
                   </li>
-                )}
-                {showDocsLink && (
                   <li>
-                    <a href={docsUrl}>
-                      <FormattedMessage id="header.docs" defaultMessage="Guides" />
+                    <a href={"https://www.aumentur.app/en/news/"}>
+                      <FormattedMessage id="header.docs" defaultMessage="News" />
                     </a>
                   </li>
-                )}
+                {/*
                 {showSourceLink && (
                   <li>
                     <a href="https://github.com/mozilla/hubs">
@@ -61,7 +58,7 @@ export function MobileNav({ isHmc, showDocsLink, docsUrl, showSourceLink, showCo
                       <FormattedMessage id="header.labs" defaultMessage="Labs" />
                     </a>
                   </li>
-                )}
+                )
                 {isAdmin && (
                   <li>
                     <a style={{ marginLeft: 0 }} href="/admin" rel="noreferrer noopener">
@@ -77,7 +74,7 @@ export function MobileNav({ isHmc, showDocsLink, docsUrl, showSourceLink, showCo
             </nav>
           </header>
         </div>
-      </div>
+                </div>*/}
     </>
   );
 }

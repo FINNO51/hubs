@@ -39,7 +39,7 @@ export function Footer({
         </div>
         <nav>
           <ul>
-            {showDiscordBotLink && (
+            {/*showDiscordBotLink && (
               <li>
                 <img className={styles.discordLogo} src={discordLogoUrl} />
                 <a href="/discord">
@@ -52,42 +52,20 @@ export function Footer({
                   />
                 </a>
               </li>
-            )}
-            {showWhatsNewLink && (
+                  )*/}
+         
               <li>
-                <a href="/whats-new">
-                  <FormattedMessage id="footer.whats-new" defaultMessage="What's New" />
+                <a target="_blank" rel="noopener noreferrer" href={"https://www.aumentur.app/en/contact-us/"}>
+                  <FormattedMessage id="footer.whats-new" defaultMessage="Contact Us" />
                 </a>
               </li>
-            )}
-            {isHmc && (
+        
+           
               <li>
-                <a target="_blank" rel="noopener noreferrer" href={"https://shop.spreadshirt.com/mozillaMR/"}>
-                  <FormattedMessage id="footer.hubs-merch" defaultMessage="Hubs Merch" />
+                <a target="_blank" rel="noopener noreferrer" href={"https://www.aumentur.app/en/information-detailed-about-privacy-and-protection-of-data/"}>
+                  <FormattedMessage id="footer.hubs-merch" defaultMessage="Privacy Notice" />
                 </a>
               </li>
-            )}
-            {isHmc && (
-              <li>
-                <a target="_blank" rel="noopener noreferrer" href={"https://hubs.mozilla.com/docs/hubs-faq.html"}>
-                  <FormattedMessage id="footer.FAQ" defaultMessage="FAQ" />
-                </a>
-              </li>
-            )}
-            {showTerms && (
-              <li>
-                <a target="_blank" rel="noopener noreferrer" href={termsUrl}>
-                  <FormattedMessage id="footer.terms-of-use" defaultMessage="Terms of Use" />
-                </a>
-              </li>
-            )}
-            {showPrivacy && (
-              <li>
-                <a className={styles.link} target="_blank" rel="noopener noreferrer" href={privacyUrl}>
-                  <FormattedMessage id="footer.privacy-notice" defaultMessage="Privacy Notice" />
-                </a>
-              </li>
-            )}
             {showCompanyLogo && (
               <li>
                 <img

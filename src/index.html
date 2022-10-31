@@ -1,37 +1,200 @@
 <!DOCTYPE html>
-<html>
 
 <head>
+    <style>
+        :root {
+            --themes: [object Object], [object Object];
+        }
+    </style>
     <!-- DO NOT REMOVE/EDIT THIS COMMENT - META_TAGS -->
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/favicon.ico">
-    <title>App</title>
+    <title>Aumentur - Metaverso</title>
     <!-- iOS (for "Add to Homescreen") -->
     <meta name="mobile-web-app-capable" content="yes">
     <!-- Web-App Manifest (https://w3c.github.io/manifest/) -->
     <link rel="manifest" href="/manifest.webmanifest">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet"> 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&amp;family=Space+Grotesk:wght@700&amp;display=swap"
+        rel="stylesheet">
 
     <!-- Google Analytics -->
     <!-- NOTE GA tracking is disabled by default. You'll need to set the GA_TRACKING_ID build variable to enable it. -->
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
     <script>
-    if (navigator.doNotTrack !== "1") {
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    }
+        if (navigator.doNotTrack !== "1") {
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        }
     </script>
 </head>
 
-<body>
-    <div id="support-root"></div>
-    <div id="home-root" class="home-root"></div>
+<body class="light-theme">
+   <div id="support-root"></div>
+   <div id="home-root"></div>
+   <!--
+    <div>
+        <div class="Banner__banner_wrapper__aBWIj"></div>
+        <header>
+            <div class="Container__container__wjKkZ Header__container__BpPbH">
+                <nav>
+                    <ul>
+                        <li><a href="/" class="Header__home-link__bm6Gr"><img alt=""
+                                    src="https://aumentur-1-assets.aumentur.net/files/e3bd930f-cf62-4c06-8660-0010a3456207.svg"></a>
+                        </li>
+                        <li><a href="/" class="Header__home-link__bm6Gr"><font size="+20">BETA</font></a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                
+            </div>
+        </header>
+        <main class="HomePage__home-page__x0clY">
+           
+            <section class="Container__container__wjKkZ">
+                <div class="HomePage__hero__J0lFV">
+                    
+                    <div class="HomePage__app-info__sRJ9w">
+                        <div class="HomePage__app-description__BGI8v">Visit our Metaverse</div>
+                        <button
+                            class="Button__button__SO7tb TextInput__button__QrvX4 Button__landing__zi2zl Button__xl__ppsaD"
+                            type="button" id="crear-sala">Create Room</button>
+                    </div>
+                    <div class="HomePage__hero-image-container__cs2a0"><img alt="Screenshot of "
+                            src="assets/images/home-hero-background-unbranded.png"></div>
+                </div>
+            </section>
+            <section
+                class="Container__container__wjKkZ HomePage__features__lcxB6 HomePage__col-lg___C60r HomePage__center-lg__QRab9">
+                <div
+                    class="Column__column__ZuRI0 Column__xl-gap__mso6a Column__lg-padding__SlnQw Column__margin-0-last-child__aJIlP HomePage__card__fGBZQ">
+                    <img>
+                    <h3>Instantly create rooms</h3>
+                    <p>Share virtual spaces with your friends, co-workers, and communities. When you create a room with
+                        Hubs, you’ll have a private virtual meeting space that you can instantly share <b>- no downloads
+                            or VR headset necessary.</b></p>
+                </div>
+                <div
+                    class="Column__column__ZuRI0 Column__xl-gap__mso6a Column__lg-padding__SlnQw Column__margin-0-last-child__aJIlP HomePage__card__fGBZQ">
+                    <img>
+                    <h3>Communicate and Collaborate</h3>
+                    <p>Choose an avatar to represent you, put on your headphones, and jump right in. Hubs makes it easy
+                        to stay connected with voice and text chat to other people in your private room.</p>
+                </div>
+                <div
+                    class="Column__column__ZuRI0 Column__xl-gap__mso6a Column__lg-padding__SlnQw Column__margin-0-last-child__aJIlP HomePage__card__fGBZQ">
+                    <img>
+                    <h3>An easier way to share media</h3>
+                    <p>Share content with others in your room by dragging and dropping photos, videos, PDF files, links,
+                        and 3D models into your space.</p>
+                </div>
+            </section>
+
+            <section class="Container__container__wjKkZ SocialBar__mobile-social-bar__zBCU5"><a target="_blank" rel="noopener noreferrer"
+                href="https://twitter.com/Aumentur"><svg width="17" height="17" viewBox="0 0 20 20"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17.5 20h-15A2.5 2.5 0 0 1 0 17.5v-15A2.5 2.5 0 0 1 2.5 0h15A2.5 2.5 0 0 1 20 2.5v15a2.5 2.5 0 0 1-2.5 2.5Z"
+                        fill="#1D9BF0"></path>
+                    <path
+                        d="M7.68 15.08c4.715 0 7.295-3.91 7.295-7.295 0-.11 0-.22-.005-.33.5-.36.935-.815 1.28-1.33-.46.205-.955.34-1.475.405a2.58 2.58 0 0 0 1.13-1.42 5.1 5.1 0 0 1-1.63.62 2.56 2.56 0 0 0-1.87-.81 2.567 2.567 0 0 0-2.5 3.15A7.28 7.28 0 0 1 4.62 5.39a2.57 2.57 0 0 0 .795 3.425 2.593 2.593 0 0 1-1.16-.32v.035c0 1.24.885 2.28 2.055 2.515a2.5 2.5 0 0 1-.675.09 2.52 2.52 0 0 1-.48-.045 2.564 2.564 0 0 0 2.395 1.78 5.142 5.142 0 0 1-3.795 1.065A7.293 7.293 0 0 0 7.68 15.08Z"
+                        fill="#fff"></path>
+                </svg></a><a target="_blank" rel="noopener noreferrer"
+                href="https://www.youtube.com/channel/UCv-kpstg1Gy4bIwbQQwOU6Q/featured"><svg width="20" height="14" viewBox="0 0 20 14"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M18.922 2.409A2.32 2.32 0 0 0 17.295.772C15.85.375 10.073.375 10.073.375s-5.777 0-7.222.382A2.367 2.367 0 0 0 1.224 2.41C.844 3.86.844 6.874.844 6.874s0 3.028.38 4.465a2.32 2.32 0 0 0 1.627 1.637c1.46.397 7.222.397 7.222.397s5.777 0 7.222-.382a2.32 2.32 0 0 0 1.627-1.636c.38-1.453.38-4.466.38-4.466s.015-3.028-.38-4.48Z"
+                        fill="red"></path>
+                    <path d="M13.037 6.875 8.233 4.092V9.66l4.804-2.784Z" fill="#fff"></path>
+                </svg></a><a target="_blank" rel="noopener noreferrer"
+                href="https://www.linkedin.com/company/aumentur/"><svg width="17" height="17" viewBox="0 0 25 25"
+                 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+                    <path
+                        d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zM8.951 9.404H6.165V17.5H8.95V9.404zm6.841-.192c-1.324 0-1.993.629-2.385 1.156l-.127.181V9.403h-2.786l.01.484c.006.636.007 1.748.005 2.93l-.015 4.683h2.786v-4.522c0-.242.018-.484.092-.657.202-.483.66-.984 1.43-.984.955 0 1.367.666 1.408 1.662l.003.168V17.5H19v-4.643c0-2.487-1.375-3.645-3.208-3.645zM7.576 5.5C6.623 5.5 6 6.105 6 6.899c0 .73.536 1.325 1.378 1.392l.18.006c.971 0 1.577-.621 1.577-1.398C9.116 6.105 8.53 5.5 7.576 5.5z"
+                        fill="#007ebb"/>
+                </svg></a><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/Aumentur/"><svg
+                    width="18" height="18" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g clip-path="url(#a)">
+                        <path
+                        d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zm4 7.278V4.5h-2.286c-2.1 0-3.428 1.6-3.428 3.889v1.667H8v2.777h2.286V19.5h2.857v-6.667h2.286L16 10.056h-2.857V8.944c0-1.11.572-1.666 1.714-1.666H16z"
+                            fill="#3a559f"></path>
+                      
+                    </g>
+                   
+                </svg></a><a target="_blank" rel="noopener noreferrer"
+                href="https://www.instagram.com/aumentur/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#c7398f"><path d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></a></section>
+
+            <div
+                class="Column__column__ZuRI0 Column__md-gap__YLriB Column__center__kI2HA Column__margin-0-last-child__aJIlP">
+                <section class="Container__container__wjKkZ SocialBar__social-bar-container__f2AtQ"><a target="_blank" rel="noopener noreferrer"
+                        href="https://twitter.com/Aumentur"><svg width="17" height="17" viewBox="0 0 20 20"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M17.5 20h-15A2.5 2.5 0 0 1 0 17.5v-15A2.5 2.5 0 0 1 2.5 0h15A2.5 2.5 0 0 1 20 2.5v15a2.5 2.5 0 0 1-2.5 2.5Z"
+                                fill="#1D9BF0"></path>
+                            <path
+                                d="M7.68 15.08c4.715 0 7.295-3.91 7.295-7.295 0-.11 0-.22-.005-.33.5-.36.935-.815 1.28-1.33-.46.205-.955.34-1.475.405a2.58 2.58 0 0 0 1.13-1.42 5.1 5.1 0 0 1-1.63.62 2.56 2.56 0 0 0-1.87-.81 2.567 2.567 0 0 0-2.5 3.15A7.28 7.28 0 0 1 4.62 5.39a2.57 2.57 0 0 0 .795 3.425 2.593 2.593 0 0 1-1.16-.32v.035c0 1.24.885 2.28 2.055 2.515a2.5 2.5 0 0 1-.675.09 2.52 2.52 0 0 1-.48-.045 2.564 2.564 0 0 0 2.395 1.78 5.142 5.142 0 0 1-3.795 1.065A7.293 7.293 0 0 0 7.68 15.08Z"
+                                fill="#fff"></path>
+                        </svg></a><a target="_blank" rel="noopener noreferrer"
+                        href="https://www.youtube.com/channel/UCv-kpstg1Gy4bIwbQQwOU6Q/featured"><svg width="20" height="14" viewBox="0 0 20 14"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.922 2.409A2.32 2.32 0 0 0 17.295.772C15.85.375 10.073.375 10.073.375s-5.777 0-7.222.382A2.367 2.367 0 0 0 1.224 2.41C.844 3.86.844 6.874.844 6.874s0 3.028.38 4.465a2.32 2.32 0 0 0 1.627 1.637c1.46.397 7.222.397 7.222.397s5.777 0 7.222-.382a2.32 2.32 0 0 0 1.627-1.636c.38-1.453.38-4.466.38-4.466s.015-3.028-.38-4.48Z"
+                                fill="red"></path>
+                            <path d="M13.037 6.875 8.233 4.092V9.66l4.804-2.784Z" fill="#fff"></path>
+                        </svg></a><a target="_blank" rel="noopener noreferrer"
+                        href="https://www.linkedin.com/company/aumentur/"><svg width="17" height="17" viewBox="0 0 25 25"
+                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000">
+                            <path
+                                d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zM8.951 9.404H6.165V17.5H8.95V9.404zm6.841-.192c-1.324 0-1.993.629-2.385 1.156l-.127.181V9.403h-2.786l.01.484c.006.636.007 1.748.005 2.93l-.015 4.683h2.786v-4.522c0-.242.018-.484.092-.657.202-.483.66-.984 1.43-.984.955 0 1.367.666 1.408 1.662l.003.168V17.5H19v-4.643c0-2.487-1.375-3.645-3.208-3.645zM7.576 5.5C6.623 5.5 6 6.105 6 6.899c0 .73.536 1.325 1.378 1.392l.18.006c.971 0 1.577-.621 1.577-1.398C9.116 6.105 8.53 5.5 7.576 5.5z"
+                                fill="#007ebb"/>
+                        </svg></a><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/Aumentur/"><svg
+                            width="18" height="18" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#a)">
+                                <path
+                                d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zm4 7.278V4.5h-2.286c-2.1 0-3.428 1.6-3.428 3.889v1.667H8v2.777h2.286V19.5h2.857v-6.667h2.286L16 10.056h-2.857V8.944c0-1.11.572-1.666 1.714-1.666H16z"
+                                    fill="#3a559f"></path>
+                              
+                            </g>
+                           
+                        </svg></a><a target="_blank" rel="noopener noreferrer"
+                        href="https://www.instagram.com/aumentur/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#c7398f"><path d="M16.98 0a6.9 6.9 0 0 1 5.08 1.98A6.94 6.94 0 0 1 24 7.02v9.96c0 2.08-.68 3.87-1.98 5.13A7.14 7.14 0 0 1 16.94 24H7.06a7.06 7.06 0 0 1-5.03-1.89A6.96 6.96 0 0 1 0 16.94V7.02C0 2.8 2.8 0 7.02 0h9.96zm.05 2.23H7.06c-1.45 0-2.7.43-3.53 1.25a4.82 4.82 0 0 0-1.3 3.54v9.92c0 1.5.43 2.7 1.3 3.58a5 5 0 0 0 3.53 1.25h9.88a5 5 0 0 0 3.53-1.25 4.73 4.73 0 0 0 1.4-3.54V7.02a5 5 0 0 0-1.3-3.49 4.82 4.82 0 0 0-3.54-1.3zM12 5.76c3.39 0 6.2 2.8 6.2 6.2a6.2 6.2 0 0 1-12.4 0 6.2 6.2 0 0 1 6.2-6.2zm0 2.22a3.99 3.99 0 0 0-3.97 3.97A3.99 3.99 0 0 0 12 15.92a3.99 3.99 0 0 0 3.97-3.97A3.99 3.99 0 0 0 12 7.98zm6.44-3.77a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8z"/></svg></a></section>
+            </div>
+        </main>
+        <footer>
+            <div class="Container__container__wjKkZ Footer__container__vNTIL">
+                <div class="Footer__powered-by__oKbdD"></div>
+                <nav>
+                    <ul>
+                        <li><a href="https://www.aumentur.app/en/app-for-smart-tourism-intelligent-destination/">Our App</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer"
+                                href="https://www.aumentur.app/en/news/">News</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer"
+                                href="https://www.aumentur.app/en/contact-us/">Contact Us</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer"
+                                href="https://www.aumentur.app/en/information-detailed-about-privacy-and-protection-of-data/">Privacy Notice</a></li>
+                        <li><img class="Footer__company-logo__DtHeI"
+                                src="assets/images/company-logo.png" alt="[object Object]"></li>
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+
+    </div>
+-->
 </body>
 
 </html>

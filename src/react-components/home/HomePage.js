@@ -56,7 +56,7 @@ export function HomePage() {
     <PageContainer className={styles.homePage}>
       <Container>
         <div className={styles.hero}>
-          {auth.isSignedIn ? (
+    {/*      {auth.isSignedIn ? (
             <div className={styles.signInContainer}>
               <span>
                 <FormattedMessage
@@ -71,10 +71,10 @@ export function HomePage() {
             </div>
           ) : (
             <SignInButton mobile />
-          )}
+          )} 
           <div className={styles.logoContainer}>
             <AppLogo />
-          </div>
+          </div>*/}
           <div className={styles.appInfo}>
             <div className={styles.appDescription}>{configs.translation("app-description")}</div>
             {canCreateRooms && <CreateRoomButton />}
@@ -94,7 +94,7 @@ export function HomePage() {
           </div>
         </div>
       </Container>
-      {configs.feature("show_feature_panels") && (
+      {/*configs.feature("show_feature_panels") && ( */}
         <Container className={classNames(styles.features, styles.colLg, styles.centerLg)}>
           <Column padding gap="xl" className={styles.card}>
             <img src={configs.image("landing_rooms_thumb")} />
@@ -134,7 +134,7 @@ export function HomePage() {
             </p>
           </Column>
         </Container>
-      )}
+  {/*    )} */}
       {sortedPublicRooms.length > 0 && (
         <Container className={styles.roomsContainer}>
           <h3 className={styles.roomsHeading}>
@@ -179,11 +179,11 @@ export function HomePage() {
           </Column>
         </Container>
       )}
-      {isHmc() ? (
+     
         <Column center>
           <SocialBar />
         </Column>
-      ) : null}
+    
     </PageContainer>
   );
 }
