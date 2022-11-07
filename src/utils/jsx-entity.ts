@@ -27,9 +27,11 @@ import {
   VideoMenuItem,
   NotRemoteHoverTarget,
   Deletable,
-  TextureCacheKey
+  TextureCacheKey,
+  WarpZone
 } from "../bit-components";
 import { inflateMediaLoader } from "../inflators/media-loader";
+import { inflateWarpZone } from "../inflators/warp-zone";
 import { inflateMediaFrame } from "../inflators/media-frame";
 import { inflateGrabbable } from "../inflators/grabbable";
 import { inflateImage } from "../inflators/image";
@@ -226,6 +228,9 @@ export interface ComponentData {
   deletable?: true;
   makeKinematicOnRelease?: true;
   destroyAtExtremeDistance?: true;
+  warpZone?: {
+    roomId: string;
+  }
 
   // @TODO
   networked?: any;
@@ -299,6 +304,7 @@ export const inflators: Required<{ [K in keyof ComponentData]: InflatorFn }> = {
   videoMenu: createDefaultInflator(VideoMenu),
   videoMenuItem: createDefaultInflator(VideoMenuItem),
   textureCacheKey: createDefaultInflator(TextureCacheKey),
+  warpZone: inflateWarpZone,
   mediaLoader: inflateMediaLoader,
   grabbable: inflateGrabbable,
 

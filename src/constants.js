@@ -7,7 +7,8 @@ const CL = {
   ENVIRONMENT: nextBit(),
   AVATAR: nextBit(),
   HANDS: nextBit(),
-  MEDIA_FRAMES: nextBit()
+  MEDIA_FRAMES: nextBit(),
+  WARP_ZONES: nextBit()
 };
 
 // @TODO we should split these "sets" off into something other than COLLISION_LAYERS or at least name

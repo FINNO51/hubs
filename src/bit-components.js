@@ -160,3 +160,8 @@ export const VideoMenu = defineComponent({
 export const AudioEmitter = defineComponent();
 export const AudioSettingsChanged = defineComponent();
 export const Deletable = defineComponent();
+export const MyHeadCollider = defineComponent();
+export const WarpZone = defineComponent({
+  roomId: Types.ui32,
+});
+WarpZone.roomId[$isStringType] = true;
