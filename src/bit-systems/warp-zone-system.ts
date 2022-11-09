@@ -3,12 +3,12 @@ import { HubsWorld } from "../app";
 import { MyHeadCollider, Rigidbody, WarpZone } from "../bit-components";
 import { changeHub } from "../change-hub";
 import { anyEntityWith } from "../utils/bit-utils";
-import { createAndRedirectToNewHub } from "../utils/phoenix-utils";
+import { createNewHub } from "../utils/my-function";
 
 let isWarping = false;
 let newRoom = "";
-export function warpZoneSystem(world: HubsWorld, physicsSystem: any){
-  if(isWarping) {
+export function warpZoneSystem(world: HubsWorld, physicsSystem: any) {
+  if (isWarping) {
     return;
   }
   const myHead = anyEntityWith(world, MyHeadCollider);
@@ -20,18 +20,21 @@ export function warpZoneSystem(world: HubsWorld, physicsSystem: any){
     if (hasComponent(world, WarpZone, collidedEid)) {
       console.log("WARP!", collidedEid);
       isWarping = true;
-      if(newRoom == ""){
-        createAndRedirectToNewHub(null, APP.getString(WarpZone.roomId[collidedEid]), true);
+      if (newRoom == "") {
+        createNewHub(null, APP.getString(WarpZone.roomId[collidedEid])).then(function (result) {
+          newRoom = result;
+        });
         console.log(APP.getString(WarpZone.roomId[collidedEid]));
-      }else{
-      changeHub( APP.getString(WarpZone.roomId[collidedEid]), true).finally(()=>{
-        setTimeout(() =>{
-          isWarping = false;
-        }, 5000);
-      });
-    }
-      
+      } else {
+        changeHub(APP.getString(WarpZone.roomId[collidedEid]), true).finally(() => {
+          setTimeout(() => {
+            isWarping = false;
+          }, 5000);
+        });
+      }
+
     }
   }
-  
+
 }
+
