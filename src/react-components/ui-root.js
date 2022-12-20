@@ -588,7 +588,7 @@ class UIRoot extends Component {
 
   beginOrSkipAudioSetup = () => {
     const skipAudioSetup = this.props.forcedVREntryType && this.props.forcedVREntryType.endsWith("_now");
-    if (skipAudioSetup) {
+    if (/*skipAudioSetup*/true) {
       console.log(`Skipping audio setup (forcedVREntryType = ${this.props.forcedVREntryType})`);
       this.onAudioReadyButton();
     } else {
@@ -810,10 +810,11 @@ class UIRoot extends Component {
               this.setState({ entering: true });
               this.props.hubChannel.sendEnteringEvent();
 
-              if (promptForNameAndAvatarBeforeEntry) {
+              if (/*promptForNameAndAvatarBeforeEntry*/ false) {
                 this.pushHistoryState("entry_step", "profile");
               } else {
-                this.onRequestMicPermission();
+                //this.onRequestMicPermission();
+                this.beginOrSkipAudioSetup();
                 this.pushHistoryState("entry_step", "audio");
               }
             } else {
@@ -1353,7 +1354,7 @@ class UIRoot extends Component {
                   <>
                     {!this.state.dialog && renderEntryFlow ? entryDialog : undefined}
                     {!this.props.selectedObject && <CompactMoreMenuButton />}
-                    {(!this.props.selectedObject ||
+                    {/* {(!this.props.selectedObject ||
                       (this.props.breakpoint !== "sm" && this.props.breakpoint !== "md")) && (
                       <ContentMenu>
                         {showObjectList && (
@@ -1374,7 +1375,7 @@ class UIRoot extends Component {
                           />
                         )}
                       </ContentMenu>
-                    )}
+                    )} */}
                     {!entered && !streaming && !isMobile && streamerName && <SpectatingLabel name={streamerName} />}
                     {this.props.activeObject && (
                       <ObjectMenuContainer
@@ -1517,67 +1518,67 @@ class UIRoot extends Component {
                     </>
                   ) : undefined
                 }
-                modal={this.state.dialog}
-                toolbarLeft={
-                  <InvitePopoverContainer
-                    hub={this.props.hub}
-                    hubChannel={this.props.hubChannel}
-                    scene={this.props.scene}
-                    store={this.props.store}
-                  />
-                }
-                toolbarCenter={
-                  <>
-                    {watching && (
-                      <>
-                        <ToolbarButton
-                          icon={<EnterIcon />}
-                          label={<FormattedMessage id="toolbar.join-room-button" defaultMessage="Join Room" />}
-                          preset="accept"
-                          onClick={() => this.setState({ watching: false })}
-                        />
-                        {enableSpectateVRButton && (
-                          <ToolbarButton
-                            icon={<VRIcon />}
-                            preset="accent5"
-                            label={
-                              <FormattedMessage id="toolbar.spectate-in-vr-button" defaultMessage="Spectate in VR" />
-                            }
-                            onClick={() => this.props.scene.enterVR()}
-                          />
-                        )}
-                      </>
-                    )}
-                    {entered && (
-                      <>
-                        <AudioPopoverContainer scene={this.props.scene} />
-                        <SharePopoverContainer scene={this.props.scene} hubChannel={this.props.hubChannel} />
-                        <PlacePopoverContainer
-                          scene={this.props.scene}
-                          hubChannel={this.props.hubChannel}
-                          mediaSearchStore={this.props.mediaSearchStore}
-                          showNonHistoriedDialog={this.showNonHistoriedDialog}
-                        />
-                        {this.props.hubChannel.can("spawn_emoji") && (
-                          <ReactionPopoverContainer
-                            scene={this.props.scene}
-                            initialPresence={getPresenceProfileForSession(this.props.presences, this.props.sessionId)}
-                          />
-                        )}
-                      </>
-                    )}
-                    <ChatToolbarButtonContainer onClick={() => this.toggleSidebar("chat")} />
-                    {entered && isMobileVR && (
-                      <ToolbarButton
-                        className={styleUtils.hideLg}
-                        icon={<VRIcon />}
-                        preset="accept"
-                        label={<FormattedMessage id="toolbar.enter-vr-button" defaultMessage="Enter VR" />}
-                        onClick={() => exit2DInterstitialAndEnterVR(true)}
-                      />
-                    )}
-                  </>
-                }
+                 modal={this.state.dialog}
+                // toolbarLeft={
+                //   <InvitePopoverContainer
+                //     hub={this.props.hub}
+                //     hubChannel={this.props.hubChannel}
+                //     scene={this.props.scene}
+                //     store={this.props.store}
+                //   />
+                // }
+                // toolbarCenter={
+                //   <>
+                //     {watching && (
+                //       <>
+                //         <ToolbarButton
+                //           icon={<EnterIcon />}
+                //           label={<FormattedMessage id="toolbar.join-room-button" defaultMessage="Join Room" />}
+                //           preset="accept"
+                //           onClick={() => this.setState({ watching: false })}
+                //         />
+                //         {enableSpectateVRButton && (
+                //           <ToolbarButton
+                //             icon={<VRIcon />}
+                //             preset="accent5"
+                //             label={
+                //               <FormattedMessage id="toolbar.spectate-in-vr-button" defaultMessage="Spectate in VR" />
+                //             }
+                //             onClick={() => this.props.scene.enterVR()}
+                //           />
+                //         )}
+                //       </>
+                //     )}
+                //     {entered && (
+                //       <>
+                //         <AudioPopoverContainer scene={this.props.scene} />
+                //         <SharePopoverContainer scene={this.props.scene} hubChannel={this.props.hubChannel} />
+                //         <PlacePopoverContainer
+                //           scene={this.props.scene}
+                //           hubChannel={this.props.hubChannel}
+                //           mediaSearchStore={this.props.mediaSearchStore}
+                //           showNonHistoriedDialog={this.showNonHistoriedDialog}
+                //         />
+                //         {this.props.hubChannel.can("spawn_emoji") && (
+                //           <ReactionPopoverContainer
+                //             scene={this.props.scene}
+                //             initialPresence={getPresenceProfileForSession(this.props.presences, this.props.sessionId)}
+                //           />
+                //         )}
+                //       </>
+                //     )}
+                //     <ChatToolbarButtonContainer onClick={() => this.toggleSidebar("chat")} />
+                //     {entered && isMobileVR && (
+                //       <ToolbarButton
+                //         className={styleUtils.hideLg}
+                //         icon={<VRIcon />}
+                //         preset="accept"
+                //         label={<FormattedMessage id="toolbar.enter-vr-button" defaultMessage="Enter VR" />}
+                //         onClick={() => exit2DInterstitialAndEnterVR(true)}
+                //       />
+                //     )}
+                //   </>
+                // }
                 toolbarRight={
                   <>
                     {entered && isMobileVR && (
@@ -1601,7 +1602,7 @@ class UIRoot extends Component {
                         }}
                       />
                     )}
-                    <MoreMenuPopoverButton menu={moreMenu} />
+                    {/* <MoreMenuPopoverButton menu={moreMenu} /> */}
                   </>
                 }
               />

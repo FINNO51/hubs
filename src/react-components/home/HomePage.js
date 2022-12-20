@@ -24,6 +24,45 @@ import maskEmail from "../../utils/mask-email";
 export function HomePage() {
   const auth = useContext(AuthContext);
   const intl = useIntl();
+  const myHTML = `<section class="Container__container__wjKkZ HomePage__rooms-container__A9sZf">
+  <h3 class="HomePage__rooms-heading__sOYNb">Public Rooms</h3>
+  <div
+      class="Column__column__ZuRI0 Column__md-gap__YLriB Column__lg-padding__SlnQw Column__grow__DxOwX Column__margin-0-last-child__aJIlP HomePage__rooms__Hp7ve">
+      <div class="MediaGrid__media-grid__CTSyf MediaGrid__center__sJRuA">
+          <div class="MediaTiles__media-tile__E0HUl MediaTiles__wide__dHsYw" tabindex="0" role="button">
+              <div class="MediaTiles__thumbnail-container__MKVU6"><a
+                      class="MediaTiles__thumbnail-link__gdkAW"
+                      href="https://aumentur.net/hXMJPhe/crucero-del-hospital-real"
+                      rel="noreferrer noopener"><img
+                          src="https://aumentur-1-nearspark.aumentur.net/thumbnail/aHR0cHM6Ly9hdW1lbnR1ci0xLWFzc2V0cy5hdW1lbnR1ci5uZXQvZmlsZXMvMDMwMzBhYzQtNjI3Yi00MmQyLWExMDMtNDBhMzExZTE0MzM0LmpwZw.jpg?w=391&amp;h=220"
+                          alt="Crucero del Hospital Real" width="391" height="220"></a>
+                  <div class="MediaTiles__member-count__vcGmo"><svg width="20" height="20"
+                          viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                              d="M15.703 6.563c-.114 1.588-1.293 2.812-2.578 2.812s-2.466-1.223-2.578-2.812c-.117-1.653 1.03-2.813 2.578-2.813 1.548 0 2.695 1.19 2.578 2.813Z"
+                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path
+                              d="M13.125 11.875c-2.546 0-4.994 1.264-5.607 3.727-.081.326.123.648.458.648h10.299c.335 0 .538-.322.458-.648-.614-2.502-3.062-3.727-5.608-3.727Z"
+                              stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"></path>
+                          <path
+                              d="M7.812 7.264C7.721 8.532 6.77 9.53 5.742 9.53c-1.026 0-1.98-.998-2.07-2.267C3.578 5.944 4.505 5 5.742 5c1.237 0 2.164.968 2.07 2.264Z"
+                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                              stroke-linejoin="round"></path>
+                          <path
+                              d="M8.047 11.954c-.705-.324-1.482-.448-2.305-.448-2.031 0-3.988 1.01-4.478 2.977-.065.26.098.517.366.517h4.386"
+                              stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10"
+                              stroke-linecap="round"></path>
+                      </svg> <span>0</span></div>
+                  <div class="MediaTiles__tile-actions__7omsl"></div>
+              </div>
+              <div class="MediaTiles__info__A_JN6"><b>Crucero del Hospital Real</b><small
+                      class="MediaTiles__description____teU"></small></div>
+          </div>
+      </div>
+  </div>
+</section>`;
+  const Salas = () => <div dangerouslySetInnerHTML={{ __html: myHTML }} />;
 
   const { results: favoriteRooms } = useFavoriteRooms();
   const { results: publicRooms } = usePublicRooms();
@@ -134,8 +173,7 @@ export function HomePage() {
             </p>
           </Column>
         </Container>
-  {/*    )} */}
-      {sortedPublicRooms.length > 0 && (
+      {/*sortedPublicRooms.length > 0 && (
         <Container className={styles.roomsContainer}>
           <h3 className={styles.roomsHeading}>
             <FormattedMessage id="home-page.public--rooms" defaultMessage="Public Rooms" />
@@ -156,7 +194,8 @@ export function HomePage() {
             </MediaGrid>
           </Column>
         </Container>
-      )}
+            )*/}
+      {Salas()}
       {sortedFavoriteRooms.length > 0 && (
         <Container className={styles.roomsContainer}>
           <h3 className={styles.roomsHeading}>

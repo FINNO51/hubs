@@ -33,9 +33,10 @@ export function RoomEntryModal({
       <Column center className={styles.content}>
         {breakpoint !== "sm" &&
           breakpoint !== "md" && (
-            <div className={styles.logoContainer}>
-              <AppLogo />
-            </div>
+            // <div className={styles.logoContainer}>
+            //   <AppLogo />
+            // </div>
+            <span/>
           )}
         <div className={styles.roomName}>
           <h5>
@@ -52,7 +53,7 @@ export function RoomEntryModal({
               </span>
             </Button>
           )}
-          {showEnterOnDevice && (
+          {/* {showEnterOnDevice && (
             <Button preset="accent5" onClick={onEnterOnDevice}>
               <VRIcon />
               <span>
@@ -79,7 +80,7 @@ export function RoomEntryModal({
                   </span>
                 </Button>
               </>
-            )}
+            )} */}
         </Column>
       </Column>
     </Modal>

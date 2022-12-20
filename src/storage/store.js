@@ -21,20 +21,20 @@ const defaultMaterialQuality = (function() {
   // We could move AFRAME's device utils into a separate package (or into this repo)
   // if we wanted to use these checks without having to import all of AFRAME.
   const isMobile = window.AFRAME && (AFRAME.utils.device.isMobile() || AFRAME.utils.device.isMobileVR());
-  if (isMobile) {
-    const qsMobileDefault = qsGet("default_mobile_material_quality");
-    if (qsMobileDefault && MATERIAL_QUALITY_OPTIONS.indexOf(qsMobileDefault) !== -1) {
-      return qsMobileDefault;
-    }
+  //if (isMobile) {
+  //  const qsMobileDefault = qsGet("default_mobile_material_quality");
+  //  if (qsMobileDefault && MATERIAL_QUALITY_OPTIONS.indexOf(qsMobileDefault) !== -1) {
+  //    return qsMobileDefault;
+  //  }
     return "low";
-  }
+  //}
 
-  const qsDefault = qsGet("default_material_quality");
-  if (qsDefault && MATERIAL_QUALITY_OPTIONS.indexOf(qsDefault) !== -1) {
-    return qsDefault;
-  }
+  //const qsDefault = qsGet("default_material_quality");
+  //if (qsDefault && MATERIAL_QUALITY_OPTIONS.indexOf(qsDefault) !== -1) {
+  //  return qsDefault;
+  //}
 
-  return "high";
+  //return "high";
 })();
 
 // WebAudio on Android devices (only non-VR devices?) seems to have
