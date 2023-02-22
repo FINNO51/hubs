@@ -91,11 +91,35 @@ export function HomePage() {
 
   const canCreateRooms = !configs.feature("disable_room_creation") || auth.isAdmin;
   const email = auth.email;
-  return (
-    <PageContainer className={styles.homePage}>
-      <Container>
-        <div className={styles.hero}>
-    {/*      {auth.isSignedIn ? (
+  const isMobile = auth.isAdmin;
+ /* if (!isMobile) {
+    return (
+      <PageContainer className={styles.homePage}>
+        <Container>
+          <div className={styles.hero}>
+            <div className={styles.appInfo}>
+              <div className={styles.noEnter}>Este contenido sólo está disponible desde un dispositivo de Realidad Virtual</div>
+              {canCreateRooms && <CreateRoomButton />}
+              <PWAButton />
+            </div>
+            
+          </div>
+        </Container>
+        
+
+        <Column center>
+          <SocialBar />
+        </Column>
+
+      </PageContainer>
+    );
+  }
+  else {*/
+    return (
+      <PageContainer className={styles.homePage}>
+        <Container>
+          <div className={styles.hero}>
+            {/*      {auth.isSignedIn ? (
             <div className={styles.signInContainer}>
               <span>
                 <FormattedMessage
@@ -114,26 +138,26 @@ export function HomePage() {
           <div className={styles.logoContainer}>
             <AppLogo />
           </div>*/}
-          <div className={styles.appInfo}>
-            <div className={styles.appDescription}>{configs.translation("app-description")}</div>
-            {canCreateRooms && <CreateRoomButton />}
-            <PWAButton />
+            <div className={styles.appInfo}>
+              <div className={styles.appDescription}>{configs.translation("app-description")}</div>
+              {canCreateRooms && <CreateRoomButton />}
+              <PWAButton />
+            </div>
+            <div className={styles.heroImageContainer}>
+              <img
+                alt={intl.formatMessage(
+                  {
+                    id: "home-page.hero-image-alt",
+                    defaultMessage: "Screenshot of {appName}"
+                  },
+                  { appName: configs.translation("app-name") }
+                )}
+                src={configs.image("home_background")}
+              />
+            </div>
           </div>
-          <div className={styles.heroImageContainer}>
-            <img
-              alt={intl.formatMessage(
-                {
-                  id: "home-page.hero-image-alt",
-                  defaultMessage: "Screenshot of {appName}"
-                },
-                { appName: configs.translation("app-name") }
-              )}
-              src={configs.image("home_background")}
-            />
-          </div>
-        </div>
-      </Container>
-      {/*configs.feature("show_feature_panels") && ( */}
+        </Container>
+        {/*configs.feature("show_feature_panels") && ( */}
         <Container className={classNames(styles.features, styles.colLg, styles.centerLg)}>
           <Column padding gap="xl" className={styles.card}>
             <img src={configs.image("landing_rooms_thumb")} />
@@ -173,7 +197,7 @@ export function HomePage() {
             </p>
           </Column>
         </Container>
-      {/*sortedPublicRooms.length > 0 && (
+        {/*sortedPublicRooms.length > 0 && (
         <Container className={styles.roomsContainer}>
           <h3 className={styles.roomsHeading}>
             <FormattedMessage id="home-page.public--rooms" defaultMessage="Public Rooms" />
@@ -195,34 +219,35 @@ export function HomePage() {
           </Column>
         </Container>
             )*/}
-      {Salas()}
-      {sortedFavoriteRooms.length > 0 && (
-        <Container className={styles.roomsContainer}>
-          <h3 className={styles.roomsHeading}>
-            <FormattedMessage id="home-page.favorite-rooms" defaultMessage="Favorite Rooms" />
-          </h3>
-          <Column grow padding className={styles.rooms}>
-            <MediaGrid center>
-              {sortedFavoriteRooms.map(room => {
-                return (
-                  <MediaTile
-                    key={room.id}
-                    entry={room}
-                    processThumbnailUrl={(entry, width, height) =>
-                      scaledThumbnailUrlFor(entry.images.preview.url, width, height)
-                    }
-                  />
-                );
-              })}
-            </MediaGrid>
-          </Column>
-        </Container>
-      )}
-     
+        {Salas()}
+        {sortedFavoriteRooms.length > 0 && (
+          <Container className={styles.roomsContainer}>
+            <h3 className={styles.roomsHeading}>
+              <FormattedMessage id="home-page.favorite-rooms" defaultMessage="Favorite Rooms" />
+            </h3>
+            <Column grow padding className={styles.rooms}>
+              <MediaGrid center>
+                {sortedFavoriteRooms.map(room => {
+                  return (
+                    <MediaTile
+                      key={room.id}
+                      entry={room}
+                      processThumbnailUrl={(entry, width, height) =>
+                        scaledThumbnailUrlFor(entry.images.preview.url, width, height)
+                      }
+                    />
+                  );
+                })}
+              </MediaGrid>
+            </Column>
+          </Container>
+        )}
+
         <Column center>
           <SocialBar />
         </Column>
-    
-    </PageContainer>
-  );
+
+      </PageContainer>
+    );
+ // }
 }

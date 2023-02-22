@@ -137,9 +137,11 @@ import "./components/avatar-audio-source";
 import "./components/avatar-inspect-collider";
 import "./components/video-texture-target";
 import "./components/mirror";
+import "./components/warp-zone";
+import "./components/trigger-volume";
 
 import ReactDOM from "react-dom";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Router, Route } from "react-router-dom";
 import { createBrowserHistory, createMemoryHistory } from "history";
 import { pushHistoryState } from "./utils/history";
@@ -206,6 +208,12 @@ const isEmbed = window.self !== window.top;
 if (isEmbed && !qs.get("embed_token")) {
   // Should be covered by X-Frame-Options, but just in case.
   throw new Error("no embed token");
+}
+
+//LIMITAR ACCESO DESDE CIERTOS DISPOSITIVOS
+
+if (!isMobileVR && !configs.IS_LOCAL_OR_CUSTOM_CLIENT){
+  location.replace('https://aumentur.net');
 }
 
 import "./components/owned-object-limiter";

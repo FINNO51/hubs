@@ -19,7 +19,7 @@ AFRAME.registerComponent("mirror-media-button", {
 
       await closeExistingMediaMirror();
 
-      const { entity } = cloneMedia(this.targetEl, "#linked-media", this.src, false, true, mirrorTarget);
+      const { entity } = cloneMedia(this.targetEl, "#static-media", this.src, false, false, mirrorTarget);
 
       entity.object3D.scale.set(0.75, 0.75, 0.75);
       entity.object3D.matrixNeedsUpdate = true;

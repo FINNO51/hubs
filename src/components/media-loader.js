@@ -470,7 +470,10 @@ AFRAME.registerComponent("media-loader", {
           "image-loaded",
           e => {
             this.onMediaLoaded(e.detail.projection === "flat" ? SHAPE.BOX : null);
-
+            this.el.setAttribute("hover-menu__hubs-item", {
+              template: "#image-hover-menu",
+              isFlat: true
+            });
             if (contentSubtype === "photo-camera") {
               this.el.setAttribute("hover-menu__photo", {
                 template: "#photo-hover-menu",
@@ -581,7 +584,7 @@ AFRAME.registerComponent("media-loader", {
                 template: "#hubs-destination-hover-menu",
                 isFlat: true
               });
-            } else {
+            }else {
               this.el.setAttribute("hover-menu__link", { template: "#link-hover-menu", isFlat: true });
             }
             this.onMediaLoaded(SHAPE.BOX);

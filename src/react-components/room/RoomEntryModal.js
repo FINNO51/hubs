@@ -13,6 +13,7 @@ import { useCssBreakpoints } from "react-use-css-breakpoints";
 import { Column } from "../layout/Column";
 import { AppLogo } from "../misc/AppLogo";
 import { FormattedMessage } from "react-intl";
+import Controles from "../../assets/images/controles.png";
 
 export function RoomEntryModal({
   className,
@@ -83,6 +84,7 @@ export function RoomEntryModal({
             )} */}
         </Column>
       </Column>
+      <img src={Controles} />
     </Modal>
   );
 }

@@ -232,8 +232,8 @@
                     tags="isStatic: true; togglesHoveredActionSet: true; inspectable: true;"
                     listed-media
                 >
-                    <a-entity class="freeze-menu" visibility-while-frozen="withinDistance: 100;" layers="mask: 256; recursive: true;">
-                        <!-- <a-entity mixin="rounded-text-button ui"
+                    <!-- <a-entity class="freeze-menu" visibility-while-frozen="withinDistance: 100;" layers="mask: 256; recursive: true;">
+                        <a-entity mixin="rounded-text-button ui"
                             is-remote-hover-target
                             tags="singleActionButton: true; isHoverMenuChild: true;"
                             local-refresh-media-button
@@ -246,7 +246,7 @@
                         </a-entity>
                         <a-entity is-remote-hover-target tags="singleActionButton:true;" mixin="rounded-text-button" open-media-button="onlyOpenLink: true" position="0 -0.25 0.001">
                             <a-entity text="value:open link; textAlign:center;" text-raycast-hack position="0 0 0.02"></a-entity>
-                        </a-entity> -->
+                        </a-entity>
                         <a-entity
                             mixin="rounded-action-button"
                             is-remote-hover-target
@@ -261,7 +261,7 @@
                                 position="0 0 0.001"
                             ></a-entity>
                         </a-entity>
-                        <!-- <a-entity
+                         <a-entity
                             mixin="rounded-button"
                             tags="isHoldable: true; holdableButton: true;"
                             is-remote-hover-target
@@ -273,8 +273,8 @@
                                 scale="0.165 0.165 0.165"
                                 position="0 0 0.001"
                             ></a-entity>
-                        </a-entity> -->
-                    </a-entity>
+                        </a-entity> 
+                    </a-entity> -->
                 </a-entity>
             </template>
 
@@ -779,6 +779,25 @@
                 </a-entity>
             </template>
 
+            <template id="image-hover-menu">
+                <a-entity class="ui interactable-ui hover-container" visible="false">
+                    <a-entity
+                            mixin="rounded-action-button"
+                            is-remote-hover-target
+                            tags="singleActionButton:true; isHoverMenuChild: true;"
+                            mirror-media-button
+                            visibility-on-content-types="contentTypes: video/ audio/ image/ application/vnd.apple.mpegurl application/x-mpegurl application/pdf;"
+                            position="0 0 0.05">
+                            <a-entity
+                                sprite
+                                icon-button="image: inspect-action.png; hoverImage: inspect-action.png"
+                                scale="0.165 0.165 0.165"
+                                position="0 0 0.001"
+                            ></a-entity>
+                        </a-entity>
+                </a-entity>
+            </template>
+
             <template id="photo-hover-menu">
                 <a-entity class="ui interactable-ui hover-container" visible="false">
                     <a-entity mixin="rounded-twitter-text-action-button ui" is-remote-hover-target tags="singleActionButton: true; isHoverMenuChild: true;" tweet-media-button position="0 0.285 0.001">
@@ -984,14 +1003,14 @@
                     </a-entity>
                 </a-entity>
                 <a-entity in-world-hud visibility-while-frozen="visible: false; requireHoverOnNonMobile: false;" rotation="30 0 0" >
-                    <a-entity sprite="name: Background.png" scale="0.2 0.08 1" position="-0.34 -0.005 0" class="hud bg"></a-entity>
-                    <a-entity id="hud-presence-count" text="value: ; textAlign:center;" position="-0.30 -0.005 0.001"></a-entity>
-                    <a-entity class="invite-btn" position="0 0.18 0" scale="0.7 0.7 0.7" is-remote-hover-target tags="singleActionButton: true;">
+                    <a-entity sprite="name: Background.png" scale="0 0 0" position="-0.34 -0.005 0" class="hud bg"></a-entity>
+                    <a-entity id="hud-presence-count" text="value: ; textAlign:center;" scale="0 0 0" position="-0.30 -0.005 0.001"></a-entity>
+                    <a-entity class="invite-btn" position="0 0.18 0" scale="0 0 0" is-remote-hover-target tags="singleActionButton: true;">
                         <a-entity mixin="rounded-text-action-button" slice9="width: 0.7" scale="0.8 0.8 1.0">
                             <a-entity text=" value:invite; textAlign:center;" text-raycast-hack position="0 0 0.001"></a-entity>
                         </a-entity>
                     </a-entity>
-                    <a-entity visible="false" vr-mode-toggle-visibility id="hud-tooltip" position="-0.2 -0.2 0" rotation="-20 0 0" radius="0.025" opacity="0.35" class="hud bg">
+                    <a-entity visible="false" vr-mode-toggle-visibility id="hud-tooltip" position="-0.2 -0.2 0" rotation="-20 0 0" radius="0.025" opacity="0" class="hud bg">
                         <a-entity text="value: ; textAlign:center; fontSize: 0.06; outlineWidth: 2%;" position="0.2 0.04 0.001"></a-entity>
                     </a-entity>
                     <a-entity
@@ -999,7 +1018,7 @@
                         tags="singleActionButton: true"
                         sprite
                         mic-button="tooltip: #hud-tooltip; tooltipText: Mute Mic; activeTooltipText: Unmute Mic;"
-                        scale="0.1 0.1 0.1"
+                        scale="0 0 0"
                         position="-0.17 0 0.001"
                         class="hud mic"
                     ></a-entity>
@@ -1014,7 +1033,7 @@
                             image: spawn.png;
                             hoverImage: spawn-hover.png;
                             disabledImage: spawn-disabled.png;"
-                        scale="0.2 0.2 0.2"
+                        scale="0 0 0"
                         position="0 0 0.005"
                         class="hud spawn"
                     ></a-entity>
@@ -1031,7 +1050,7 @@
                             activeImage: pen_on.png;
                             activeHoverImage: pen_on-hover.png;
                             disabledImage: pen_off-disabled.png;"
-                        scale="0.1 0.1 0.1"
+                        scale="0 0 0"
                         position="0.17 0 0.001"
                         class="hud penhud"
                     ></a-entity>
@@ -1048,7 +1067,7 @@
                             activeImage: camera_on.png;
                             activeHoverImage: camera_on-hover.png;
                             disabledImage: camera_off-disabled.png;"
-                        scale="0.1 0.1 0.1"
+                        scale="0 0 0"
                         position="0.28 0 0.001"
                         class="hud camera-btn"
                     ></a-entity>

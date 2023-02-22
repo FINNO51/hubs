@@ -9,6 +9,7 @@ import { AuthContextProvider } from "./react-components/auth/AuthContext";
 import "./react-components/styles/global.scss";
 import { ThemeProvider } from "./react-components/styles/theme";
 
+
 registerTelemetry("/home", "Hubs Home Page");
 
 const store = new Store();
