@@ -32,7 +32,7 @@ AFRAME.registerComponent("open-media-button", {
             if (url.hash && window.APP.hub.hub_id === hubId) {
               label = "go to";
             } else {
-              label = "visit room";
+              label = "Ir";
             }
           }
         }
@@ -64,8 +64,9 @@ AFRAME.registerComponent("open-media-button", {
           // move to new room without page load or entry flow
           changeHub(hubId);
         } else {
-          await exitImmersive();
-          location.href = this.src;
+          //await exitImmersive();
+          //location.href = this.src;
+          changeHub(hubId);
         }
       } else {
         await exitImmersive();

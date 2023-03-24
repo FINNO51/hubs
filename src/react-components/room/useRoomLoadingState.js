@@ -39,7 +39,7 @@ const messages = defineMessages({
   default: {
     id: "loading-screen.default",
     description: "The scene has started loading.",
-    defaultMessage: "Loading scene..."
+    defaultMessage: "Cargando experiencia..."
   },
   loadingObjects: {
     id: "loading-screen.loading-objects",
@@ -55,7 +55,7 @@ const messages = defineMessages({
     id: "loading-screen.entering-room",
     description:
       "Once the scene has finished loading, this message tells users that they will be entering the room shortly.",
-    defaultMessage: "Entering room..."
+    defaultMessage: "Entrando..."
   }
 });
 

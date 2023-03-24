@@ -99,35 +99,38 @@ AFRAME.registerComponent("media-video", {
     this.onSnapImageLoaded = () => (this.isSnapping = false);
     this.hasAudioTracks = false;
 
-    this.el.setAttribute("hover-menu__video", { template: "#video-hover-menu", isFlat: true });
-    this.el.components["hover-menu__video"].getHoverMenu().then(menu => {
-      // If we got removed while waiting, do nothing.
-      if (!this.el.parentNode) return;
+    if(this.data.projection === "360-equirectangular" ){}else{
+      this.el.setAttribute("hover-menu__video", { template: "#video-hover-menu", isFlat: true });
+      this.el.components["hover-menu__video"].getHoverMenu().then(menu => {
+        // If we got removed while waiting, do nothing.
+        if (!this.el.parentNode) return;
 
-      this.hoverMenu = menu;
+        this.hoverMenu = menu;
 
-      this.playbackControls = this.el.querySelector(".video-playback");
-      this.playPauseButton = this.el.querySelector(".video-playpause-button");
-      this.volumeUpButton = this.el.querySelector(".video-volume-up-button");
-      this.volumeDownButton = this.el.querySelector(".video-volume-down-button");
-      this.seekForwardButton = this.el.querySelector(".video-seek-forward-button");
-      this.seekBackButton = this.el.querySelector(".video-seek-back-button");
-      this.snapButton = this.el.querySelector(".video-snap-button");
-      this.timeLabel = this.el.querySelector(".video-time-label");
-      this.volumeLabel = this.el.querySelector(".video-volume-label");
-      this.linkButton = this.el.querySelector(".video-link-button");
+        this.playbackControls = this.el.querySelector(".video-playback");
+        this.playPauseButton = this.el.querySelector(".video-playpause-button");
+        this.volumeUpButton = this.el.querySelector(".video-volume-up-button");
+        this.volumeDownButton = this.el.querySelector(".video-volume-down-button");
+        this.seekForwardButton = this.el.querySelector(".video-seek-forward-button");
+        this.seekBackButton = this.el.querySelector(".video-seek-back-button");
+        this.snapButton = this.el.querySelector(".video-snap-button");
+        this.timeLabel = this.el.querySelector(".video-time-label");
+        this.volumeLabel = this.el.querySelector(".video-volume-label");
+        this.linkButton = this.el.querySelector(".video-link-button");
 
-      this.playPauseButton.object3D.addEventListener("interact", this.togglePlaying);
-      this.seekForwardButton.object3D.addEventListener("interact", this.seekForward);
-      this.seekBackButton.object3D.addEventListener("interact", this.seekBack);
-      this.volumeUpButton.object3D.addEventListener("interact", this.volumeUp);
-      this.volumeDownButton.object3D.addEventListener("interact", this.volumeDown);
-      this.snapButton.object3D.addEventListener("interact", this.snap);
+        this.playPauseButton.object3D.addEventListener("interact", this.togglePlaying);
+        this.seekForwardButton.object3D.addEventListener("interact", this.seekForward);
+        this.seekBackButton.object3D.addEventListener("interact", this.seekBack);
+        this.volumeUpButton.object3D.addEventListener("interact", this.volumeUp);
+        this.volumeDownButton.object3D.addEventListener("interact", this.volumeDown);
+        this.snapButton.object3D.addEventListener("interact", this.snap);
 
-      this.updateVolumeLabel();
-      this.updateHoverMenu();
-      this.updatePlaybackState();
-    });
+        this.updateVolumeLabel();
+        this.updateHoverMenu();
+        this.updatePlaybackState();
+      });
+    }
+
 
     NAF.utils
       .getNetworkedEntity(this.el)

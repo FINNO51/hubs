@@ -603,15 +603,15 @@ class UIRoot extends Component {
   };
 
   onAudioReadyButton = async () => {
-    if (!this.state.enterInVR) {
+    if (/*!this.state.enterInVR*/ !isMobileVR) {
       await showFullScreenIfAvailable();
     }
 
     // Push the new history state before going into VR, otherwise menu button will take us back
     clearHistoryState(this.props.history);
 
-    const muteOnEntry = this.props.store.state.preferences.muteMicOnEntry;
-    await this.props.enterScene(this.state.enterInVR, muteOnEntry);
+    const muteOnEntry = true;
+    await this.props.enterScene(/*this.state.enterInVR*/ isMobileVR, muteOnEntry);
 
     this.setState({ entered: true, entering: false, showShareDialog: false });
 
@@ -806,7 +806,13 @@ class UIRoot extends Component {
           roomName={this.props.hub.name}
           showJoinRoom={!this.state.waitingOnAudio && !this.props.entryDisallowed}
           onJoinRoom={() => {
-            if (promptForNameAndAvatarBeforeEntry || !this.props.forcedVREntryType) {
+            if(isMobileVR){
+              this.setState({ entering: true });
+              this.props.hubChannel.sendEnteringEvent();
+              this.beginOrSkipAudioSetup();
+              this.pushHistoryState("entry_step", "audio");
+              this.onAudioReadyButton();
+            }else if (promptForNameAndAvatarBeforeEntry || !this.props.forcedVREntryType) {
               this.setState({ entering: true });
               this.props.hubChannel.sendEnteringEvent();
 
@@ -817,7 +823,7 @@ class UIRoot extends Component {
                 this.beginOrSkipAudioSetup();
                 this.pushHistoryState("entry_step", "audio");
               }
-            } else {
+            }else {
               this.handleForceEntry();
             }
           }}
@@ -1602,7 +1608,7 @@ class UIRoot extends Component {
                         }}
                       />
                     )}
-                    {/* <MoreMenuPopoverButton menu={moreMenu} /> */}
+                    { <MoreMenuPopoverButton menu={moreMenu} /> }
                   </>
                 }
               />

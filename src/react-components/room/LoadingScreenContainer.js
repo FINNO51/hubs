@@ -19,13 +19,13 @@ export function LoadingScreenContainer({ onLoaded, scene }) {
   const infoMessages = useMemo(
     () => [
       {
-        heading: intl.formatMessage({ id: "loading-screen.heading.tip", defaultMessage: "Tip:" }),
+        heading: intl.formatMessage({ id: "loading-screen.heading.tip", defaultMessage: "Espere" }),
         message: intl.formatMessage({
           id: "loading-screen.message.keyboard-controls",
-          defaultMessage: "Press the Q & E keys to turn left and right."
+          defaultMessage: "- Preparando la experiencia -"
         })
       },
-      {
+      /*{
         heading: intl.formatMessage({ id: "loading-screen.heading.whats-new", defaultMessage: "What's New?" }),
         message: intl.formatMessage(
           {
@@ -41,7 +41,7 @@ export function LoadingScreenContainer({ onLoaded, scene }) {
             )
           }
         )
-      }
+      }*/
     ],
     [intl]
   );

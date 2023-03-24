@@ -46,9 +46,9 @@ export async function handleExitTo2DInterstitial(isLower, exitAction, nonFullscr
 }
 
 export async function exit2DInterstitialAndEnterVR(force) {
-  if (!force && !_isIn2DInterstitial) {
-    return;
-  }
+ // if (!force && !_isIn2DInterstitial) {
+ //   return;
+ // }
 
   _isIn2DInterstitial = false;
 
@@ -59,14 +59,19 @@ export async function exit2DInterstitialAndEnterVR(force) {
   if (isMobileVR) {
     if (screenfull.isFullscreen) {
       await screenfull.exit();
-      await getUserGesture();
+      //await getUserGesture();
+      scene.emit("2d-interstitial-gesture-complete");
       await scene.enterVR();
+      console.log("a");
     } else {
+      scene.emit("2d-interstitial-gesture-complete");
       await scene.enterVR();
+      console.log("b");
     }
   } else {
     if (!scene.is("vr-mode")) {
       await scene.enterVR();
+      console.log("c");
     }
   }
 }

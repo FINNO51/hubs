@@ -312,6 +312,7 @@ if (document.location.pathname.includes("hub.html")) {
 
 // when loading the client as a "default room" on the homepage, use MemoryHistory since exposing all the client paths at the root is undesirable
 const history = routerBaseName === "/" ? createMemoryHistory() : createBrowserHistory({ basename: routerBaseName });
+document.title = "AumenturVR";
 window.APP.history = history;
 
 const qsVREntryType = qs.get("vr_entry_type");

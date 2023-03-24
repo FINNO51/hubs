@@ -14,6 +14,7 @@ import { Column } from "../layout/Column";
 import { AppLogo } from "../misc/AppLogo";
 import { FormattedMessage } from "react-intl";
 import Controles from "../../assets/images/controles.png";
+import {exit2DInterstitialAndEnterVR} from "../../utils/vr-interstitial";
 
 export function RoomEntryModal({
   className,
@@ -50,7 +51,7 @@ export function RoomEntryModal({
             <Button preset="accent4" onClick={onJoinRoom}>
               <EnterIcon />
               <span>
-                <FormattedMessage id="room-entry-modal.join-room-button" defaultMessage="Join Room" />
+                <FormattedMessage id="room-entry-modal.join-room-button" defaultMessage="Entrar" />
               </span>
             </Button>
           )}
